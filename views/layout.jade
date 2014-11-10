@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/global.css')
+    script(src="./javascripts/vendor/jquery.js")
+    script(src="./javascripts/vendor/underscore.js")
+    script(src="./javascripts/vendor/backbone.js")
+    script(src="./javascripts/vendor/backbone.marionette.js")
+    script(src="./javascripts/app.js")
+    script(src="./javascripts/apps/entities/friend.js")
+    script(src="./javascripts/apps/entities/friend_request.js")
+    script(src="./javascripts/apps/friends/list/list_view.js")
+    script(src="./javascripts/apps/friends/list/list_controller.js")
+    script(src="./javascripts/apps/search/search_view.js")
+    script(src="./javascripts/apps/search/search_controller.js")
+
+  body.ui
+    - if(error_messages.length)
+      .alert.alert-danger
+        div!= _showErrors(error_messages)
+    block content
+  script(type='text/javascript').
+    FriendManager.start();
+

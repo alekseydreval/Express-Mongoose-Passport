@@ -1,0 +1,35 @@
+extends layout
+block content
+  include includes/navigation
+  div.page-wrapper
+    div.page(id='js-search')
+
+   script(type='text/javascript', id='search')
+     div.grid-container
+       div.grid-column.col-60
+         div.substrate
+           div.textbox.icon
+             i.fa.fa-search
+             input(type="text", placeholder="Enter your user name ..." id="js-search")
+
+          div.list-of-users
+            ul(id="search-list")
+
+  script(type='text/script', id='search-list-item')
+    a(href!="<%= 'profile/' + _id %>"): span <%= name %> <%= surname %>
+
+    div.control
+      <% if(state == 'added') { %>
+      button.clear.js-remove
+        i.fa.fa-times
+      <% } else if(state == 'pending_out'){ %>
+      button.clear
+        span You have already sent friend request - wait for approval.
+      <% } else if(state == 'pending_in'){ %>
+      button.clear
+        i.fa.fa-check
+        span Approve this request in your Friends menu
+      <% } else {%>
+      button.clear.js-add
+        i.fa.fa-plus
+      <% } %>

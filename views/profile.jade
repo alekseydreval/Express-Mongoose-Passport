@@ -1,0 +1,12 @@
+- title = 'Profile'
+extends layout
+block content
+  include includes/navigation
+  .page-wrapper
+    .page
+      .grid-container
+        .grid-column.col-60
+          .substrate
+            h1 Name: #{ user.name + " " + user.surname}
+            p Username: #{ user.username}
+            p Date of registration: #{ _formatDate(user.createdAt) }

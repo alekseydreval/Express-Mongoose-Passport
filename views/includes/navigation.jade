@@ -1,0 +1,17 @@
+.navigation
+  ul
+    li(class=_isActive(url, /\/profile$/))
+      a.button.rectangular(href='/profile', class=_isActive(url, /\/profile$/))
+        i.fa.fa-user
+        span Profile
+    li(class=_isActive(url, /\/friends$/))
+      a.button.rectangular(href='/friends', class=_isActive(url, /\/friends$/))
+        i.fa.fa-user
+        span Friends
+    li(class=_isActive(url, /\/search$/))
+      a.button.rectangular(href='/search', class=_isActive(url, /\/search$/))
+        i.fa.fa-search
+        span Search
+    li
+      a.button.rectangular(href='/logout')
+        span Logout

@@ -1,0 +1,48 @@
+- title = "Friends: List & Requests";
+
+extends layout
+block content
+  include includes/navigation
+  div.page-wrapper: div.page
+    div.grid-container
+      div.grid-column.col-50
+        div.substrate
+          h1 Inbox
+
+          div.list-of-users(id='js-income')
+
+
+      div.grid-column.col-50
+        div.substrate
+          h1 Outbox
+
+          div.list-of-users(id='js-outcome')
+
+
+      div.grid-column
+        div.substrate
+          h1 My Friends
+
+          div.list-of-users(id='js-friends')
+
+  script(type="text/template", id="req-income-list-item")
+    a(href!="<%= 'profile/' + _id %>"): span <%= name %> <%= surname %>
+      div.control
+        button.clear.js-approve
+          i.fa.fa-check
+
+        button.clear.js-decline
+          i.fa.fa-times
+
+  script(type="text/template", id="req-outcome-list-item")
+    a(href!="<%= 'profile/' + _id %>"): span <%= name %> <%= surname %>
+      div.control
+        button.clear.js-decline
+          i.fa.fa-times
+
+  script(type="text/template", id="friend-list-item")
+    a(href!="<%= 'profile/' + _id %>"): span <%= name %> <%= surname %>
+      div.control
+        button.clear.js-decline
+          i.fa.fa-times
+          span Remove from friends

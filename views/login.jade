@@ -1,0 +1,19 @@
+extends layout
+block content
+  .pattern-cell.login
+    div
+      form(action='/login', method='post')
+        .substrate
+          .textbox.icon
+            i.fa.fa-user
+            input(type='text', placeholder='Login', name='username')
+          .textbox.icon
+            i.fa.fa-lock
+            input(type='password', placeholder='Password', name='password')
+          .textbox
+            input(type='text', placeholder='Name', name='name')
+          .textbox
+            input(type='text', placeholder='Surname', name='surname')
+          button.rectangular.green(type='submit')
+            i.fa.fa-sign-in
+            span Auth
